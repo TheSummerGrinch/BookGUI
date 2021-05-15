@@ -1,4 +1,4 @@
-package me.UseRod.BookGUI.Utils;
+package me.userod.bookgui.utils;
 
 import java.util.List;
 
@@ -12,7 +12,7 @@ import net.minecraft.server.v1_8_R3.NBTTagString;
 
 public class BookFactory {
 	
-	public static ItemStack book(String title, String author, List<String> pages) {
+	public static ItemStack create(String title, String author, List<String> pages) {
         ItemStack is = new ItemStack(Material.WRITTEN_BOOK, 1);
         net.minecraft.server.v1_8_R3.ItemStack nmsis = CraftItemStack.asNMSCopy(is);
         NBTTagCompound bd = new NBTTagCompound();
