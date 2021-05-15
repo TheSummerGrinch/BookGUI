@@ -1,0 +1,7 @@
+main: me.UseRod.BookGUI.MainClass
+name: BookGUI
+version: 0.1
+author: UseRod
+commands:
+  BookGUI:
+    aliases: [bg, book, bookg]
