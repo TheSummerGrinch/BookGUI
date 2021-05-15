@@ -21,11 +21,11 @@ public class MainCommand implements CommandExecutor {
 	public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
 		
 		if (sender instanceof Player) {
-			if(args.length > 0 && ConfigVariables.BookSections.contains(args[0)) {
-				for (String bookName : ConfigVariables.BookSections) {
+			if(args.length > 0 && ConfigVariables.bookSections.contains(args[0)) {
+				for (String bookName : ConfigVariables.bookSections) {
 					String title = "Books." + bookName + ".title";
 					List<String> pages = Color.translate(getStringList("Books." + bookName + ".pages"));
-					ItemStack book = BookFactory.book(title, sender.getName(), pages);
+					ItemStack book = BookFactory.create(title, sender.getName(), pages);
 					me.userod.bookgui.utils.Book.open(book, (Player) sender);
 				}
 				return true;
