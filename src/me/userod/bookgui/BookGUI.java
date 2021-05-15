@@ -43,7 +43,7 @@ public class BookGUI extends JavaPlugin {
 		});
 		
 		if(this.isEnabled()) {
-			this.logInfo("Loaded " + ConfigVariables.BookSections.size() / 3 + " Books...");
+			this.logInfo("Loaded " + ConfigVariables.bookSections.size() / 3 + " Books..."); // What is this? Some kind of black magic? Why the static abuse?
 		}
 	}
 	
