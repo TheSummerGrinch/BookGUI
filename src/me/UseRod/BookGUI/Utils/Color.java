@@ -1,4 +1,4 @@
-package me.UseRod.BookGUI.Utils;
+package me.userod.bookgui.utils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,11 +8,11 @@ import org.bukkit.ChatColor;
 public class Color {
 	
 	public static List<String> translate(List<String> text) {
-		List<String> ResultSet = new ArrayList<String>();
-		for(String TextInMethod : text) {
-			ResultSet.add(ChatColor.translateAlternateColorCodes('&', TextInMethod));
+		List<String> resultSet = new ArrayList<String>();
+		for(String textInMethod : text) {
+			resultSet.add(ChatColor.translateAlternateColorCodes('&', textInMethod));
 		}
-		return ResultSet;
+		return resultSet;
 	}
 
 }
