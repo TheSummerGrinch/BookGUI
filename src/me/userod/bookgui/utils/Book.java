@@ -11,18 +11,18 @@ import net.minecraft.server.v1_8_R3.PacketPlayOutCustomPayload;
 
 public class Book {
 	
-	public static void open(ItemStack book, Player p) {
-		int slot = p.getInventory().getHeldItemSlot();
-        ItemStack old = p.getInventory().getItem(slot);
-        p.getInventory().setItem(slot, book);
+	public static void open(ItemStack book, Player player) {
+	int slot = player.getInventory().getHeldItemSlot();
+        ItemStack old = player.getInventory().getItem(slot);
+        player.getInventory().setItem(slot, book);
 
         ByteBuf buf = Unpooled.buffer(256);
         buf.setByte(0, (byte)0);
         buf.writerIndex(1);
 
         PacketPlayOutCustomPayload packet = new PacketPlayOutCustomPayload("MC|BOpen", new PacketDataSerializer(buf));
-        ((CraftPlayer)p).getHandle().playerConnection.sendPacket(packet);
-        p.getInventory().setItem(slot, old);
+        ((CraftPlayer) player).getHandle().playerConnection.sendPacket(packet);
+        player.getInventory().setItem(slot, old);
     }
 
 }
