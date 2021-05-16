@@ -1,6 +1,6 @@
 main: me.userod.bookgui.BookGUI
 name: BookGUI
-version: 0.1
+version: 0.2.4
 author: UseRod
 commands:
   BookGUI:
