@@ -1,6 +1,5 @@
 package me.userod.bookgui; // Package-names use lowercase
 
-import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -10,12 +9,11 @@ import org.bukkit.Bukkit;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.event.Listener;
-import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import me.userod.bookgui.commands.MainCommand; // Again, package-names in lowercase
-import me.userod.bookgui.utils.ConfigVariables; // Ditto
+import me.userod.bookgui.commands.MainCommand;
+import me.userod.bookgui.utils.ConfigVariables;
 
 
 public class BookGUI extends JavaPlugin {
