@@ -12,7 +12,7 @@ import net.minecraft.server.v1_8_R3.PacketPlayOutCustomPayload;
 public class Book {
 	
 	public static void open(ItemStack book, Player player) {
-	int slot = player.getInventory().getHeldItemSlot();
+	    int slot = player.getInventory().getHeldItemSlot();
         ItemStack old = player.getInventory().getItem(slot);
         player.getInventory().setItem(slot, book);
 
