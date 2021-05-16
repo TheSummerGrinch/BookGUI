@@ -15,7 +15,7 @@ public class BookFactory {
 	public static ItemStack create(String title, String author, List<String> pages) {
         ItemStack is = new ItemStack(Material.WRITTEN_BOOK, 1);
         net.minecraft.server.v1_8_R3.ItemStack nmsis = CraftItemStack.asNMSCopy(is);
-        NBTTagCompound bd = new NBTTagCompound(); // Use descriptive variable and field names.
+        NBTTagCompound bd = new NBTTagCompound();
         bd.setString("title", title);
         bd.setString("author", author);
         NBTTagList bp = new NBTTagList();

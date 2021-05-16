@@ -7,7 +7,7 @@ import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.Plugin;
 
-import me.UseRod.BookGUI.MainClass;
+import me.userod.bookgui.BookGUI;
 
 public class ConfigVariables {
 	
