@@ -22,13 +22,14 @@ public class BookFactory {
 
         NBTTagList bookPageData = new NBTTagList();
         for(String text : pages) {
-            bp.add(new NBTTagString(text));
+            bookPageData.add(new NBTTagString(text));
         }
-        bd.set("pages", bp);
-        nmsis.setTag(bd);
-        
-        is = CraftItemStack.asBukkitCopy(nmsis);
-        return is;
+
+        bookMetaData.set("pages", bookPageData);
+        nmsItemStack.setTag(bookMetaData);
+
+        itemStack = CraftItemStack.asBukkitCopy(nmsItemStack);
+        return itemStack;
     }
 
 }
