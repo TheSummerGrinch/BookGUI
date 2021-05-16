@@ -19,17 +19,14 @@ public class MainCommand implements CommandExecutor {
 	
 	@Override
 	public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-		if(args.length == 0);
-		else {
-			if (sender instanceof Player) {
-				for (String bookName : ConfigVariables.bookSections) {
-					if(ConfigVariables.bookSections.contains(args[0]) && bookName.equalsIgnoreCase(args[0])) {
-						String title = getString("Books." + bookName + ".title");
-						List<String> pages = Color.translate(getStringList("Books." + bookName + ".pages"));
-						ItemStack book = BookFactory.create(title, sender.getName(), pages);
-						Book.open(book, (Player) sender);
-					return true;
-					}
+	    if (sender instanceof Player && args.length > 0) {
+	        for (String bookName : ConfigVariables.bookSections) {
+				if(ConfigVariables.bookSections.contains(args[0]) && bookName.equalsIgnoreCase(args[0])) {
+					String title = getString("Books." + bookName + ".title");
+					List<String> pages = Color.translate(getStringList("Books." + bookName + ".pages"));
+					ItemStack book = BookFactory.create(title, sender.getName(), pages);
+					Book.open(book, (Player) sender);
+				return true;
 				}
 			}
 		}
