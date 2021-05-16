@@ -18,9 +18,9 @@ public class MainCommand implements CommandExecutor {
 	
 	@Override
 	public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-
-		if (sender instanceof Player && args.length > 0) {
-			if(ConfigVariables.bookSections.contains(args[0])) {
+		
+		if (sender instanceof Player) {
+			if(args.length > 0 && ConfigVariables.bookSections.contains(args[0)) {
 				for (String bookName : ConfigVariables.bookSections) {
                                         if(args[0].equalsIgnoreCase(BookName)) {
 					        String title = "Books." + bookName + ".title";
