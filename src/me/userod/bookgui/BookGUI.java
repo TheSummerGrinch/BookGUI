@@ -1,6 +1,5 @@
-package me.userod.bookgui; // Package-names use lowercase
+package me.userod.bookgui;
 
-import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -8,42 +7,38 @@ import java.util.logging.Logger;
 
 import org.bukkit.Bukkit;
 import org.bukkit.command.CommandExecutor;
-import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.event.Listener;
-import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import me.userod.bookgui.commands.MainCommand; // Again, package-names in lowercase
-import me.userod.bookgui.utils.ConfigVariables; // Ditto
+import me.userod.bookgui.commands.MainCommand;
+import me.userod.bookgui.utils.ConfigVariables;
 
 
 public class BookGUI extends JavaPlugin {
 	
-	private FileConfiguration config;
-	private Logger logger;
-	private PluginManager pluginManager; // Names of fields and variables use camelCase.
+	Logger logger;
+	PluginManager pluginManager;
 	private List<Listener> listeners;
 	private HashMap<String, CommandExecutor> commands;
 	
 	public void onEnable() {
 		
 		this.saveDefaultConfig();
-		this.config = this.getConfig();
-		this.logger = this.getLogger();
-		this.pluginManager = Bukkit.getPluginManager();
-		this.listeners = new ArrayList<Listener>();
-		this.commands = new HashMap<String, CommandExecutor>(); // Probably a bit much. But I assume you plan on extending this.
-		this.prepareCommands();
+		logger = this.getLogger();
+		pluginManager = Bukkit.getPluginManager();
+		listeners = new ArrayList<Listener>();
+		commands = new HashMap<String, CommandExecutor>();
+		prepareCommands();
 		
-		this.logInfo("Loading Books..."); // Not everything needs to be logged.
+		this.logInfo("Loading Books...");
 		
 		this.commands.forEach((name, commandExecutor) -> {
 			getCommand(name).setExecutor(commandExecutor);
-		});
+		}); // i don't know what's the difference.
 		
 		if(this.isEnabled()) {
-			this.logInfo("Loaded " + ConfigVariables.bookSections.size() / 3 + " Books..."); // What is this? Some kind of black magic? Why the static abuse?
+			this.logInfo("Loaded " + ConfigVariables.bookSections.size() / 3 + " Books...");
 		}
 	}
 	
