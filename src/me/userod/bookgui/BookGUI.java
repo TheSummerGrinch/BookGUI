@@ -20,7 +20,7 @@ public class BookGUI extends JavaPlugin {
 	
 	private FileConfiguration config;
 	private Logger logger;
-	private PluginManager pluginManager;
+	private PluginManager pluginManager; // Names of fields and variables use camelCase.
 	private List<Listener> listeners;
 	private HashMap<String, CommandExecutor> commands;
 	
@@ -31,22 +31,22 @@ public class BookGUI extends JavaPlugin {
 		this.logger = this.getLogger();
 		this.pluginManager = Bukkit.getPluginManager();
 		this.listeners = new ArrayList<Listener>();
-		this.commands = new HashMap<String, CommandExecutor>();
+		this.commands = new HashMap<String, CommandExecutor>(); // Probably a bit much. But I assume you plan on extending this.
 		this.prepareCommands();
-
-		this.logInfo("Loading Books...");
-
+		
+		this.logInfo("Loading Books..."); // Not everything needs to be logged.
+		
 		this.commands.forEach((name, commandExecutor) -> {
 			getCommand(name).setExecutor(commandExecutor);
 		});
 		
 		if(this.isEnabled()) {
-			this.logInfo("Loaded " + ConfigVariables.bookSections.size() / 3 + " Books...");
+			this.logInfo("Loaded " + ConfigVariables.bookSections.size() / 3 + " Books..."); // What is this? Some kind of black magic? Why the static abuse?
 		}
 	}
 	
 	public void logInfo(String Message) {
-		this.logger.info(Message);
+		this.logger.info(Message); // Logging everything as INFO is sloppy.
 	}
 	
 	public void addListener(Listener listenerClass) {
