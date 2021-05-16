@@ -13,12 +13,14 @@ import net.minecraft.server.v1_8_R3.NBTTagString;
 public class BookFactory {
 	
 	public static ItemStack create(String title, String author, List<String> pages) {
-        ItemStack is = new ItemStack(Material.WRITTEN_BOOK, 1);
-        net.minecraft.server.v1_8_R3.ItemStack nmsis = CraftItemStack.asNMSCopy(is);
-        NBTTagCompound bd = new NBTTagCompound();
-        bd.setString("title", title);
-        bd.setString("author", author);
-        NBTTagList bp = new NBTTagList();
+        ItemStack itemStack = new ItemStack(Material.WRITTEN_BOOK, 1);
+        net.minecraft.server.v1_8_R3.ItemStack nmsItemStack = CraftItemStack.asNMSCopy(itemStack);
+
+        NBTTagCompound bookMetaData = new NBTTagCompound();
+        bookMetaData.setString("title", title);
+        bookMetaData.setString("author", author);
+
+        NBTTagList bookPageData = new NBTTagList();
         for(String text : pages) {
             bp.add(new NBTTagString(text));
         }
