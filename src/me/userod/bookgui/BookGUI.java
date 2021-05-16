@@ -35,7 +35,7 @@ public class BookGUI extends JavaPlugin {
 		
 		this.commands.forEach((name, commandExecutor) -> {
 			getCommand(name).setExecutor(commandExecutor);
-		}); // i don't know what's the difference.
+		});
 		
 		if(this.isEnabled()) {
 			this.logInfo("Loaded " + ConfigVariables.bookSections.size() / 3 + " Books...");
@@ -43,7 +43,7 @@ public class BookGUI extends JavaPlugin {
 	}
 	
 	public void logInfo(String Message) {
-		this.logger.info(Message); // Logging everything as INFO is sloppy.
+		this.logger.info(Message);
 	}
 	
 	public void addListener(Listener listenerClass) {
