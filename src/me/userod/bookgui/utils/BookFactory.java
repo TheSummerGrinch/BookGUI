@@ -11,7 +11,7 @@ import net.minecraft.server.v1_8_R3.NBTTagList;
 import net.minecraft.server.v1_8_R3.NBTTagString;
 
 public class BookFactory {
-
+	
 	public static ItemStack create(String title, String author, List<String> pages) {
         ItemStack itemStack = new ItemStack(Material.WRITTEN_BOOK, 1);
         net.minecraft.server.v1_8_R3.ItemStack nmsItemStack = CraftItemStack.asNMSCopy(itemStack);
@@ -23,14 +23,13 @@ public class BookFactory {
         NBTTagList nbtTagList = new NBTTagList();
 
         for(String text : pages) {
-            nbtTagList.add(new NBTTagString(text));
+            bp.add(new NBTTagString(text));
         }
-
-        nbtTagCompound.set("pages", nbtTagList);
-        nmsItemStack.setTag(nbtTagCompound);
-
-        itemStack = CraftItemStack.asBukkitCopy(nmsItemStack);
-        return itemStack;
+        bd.set("pages", bp);
+        nmsis.setTag(bd);
+        
+        is = CraftItemStack.asBukkitCopy(nmsis);
+        return is;
     }
 
 }
