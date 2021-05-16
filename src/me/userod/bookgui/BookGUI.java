@@ -45,7 +45,8 @@ public class BookGUI extends JavaPlugin {
 	public void logInfo(String Message) {
 		this.logger.info(Message);
 	}
-	
+
+	// TODO not currently using this. Maybe delete method?
 	public void addListener(Listener listenerClass) {
 		this.listeners.add(listenerClass);
 	}
