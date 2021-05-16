@@ -15,7 +15,7 @@ import me.userod.bookgui.utils.Color;
 import me.userod.bookgui.utils.ConfigVariables;
 
 public class MainCommand implements CommandExecutor {
-	
+
 	@Override
 	public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
 
@@ -34,12 +34,15 @@ public class MainCommand implements CommandExecutor {
 		}
 		return false;
 	}
-	
+
+	//TODO It's unused, so maybe delete it?
+	@Deprecated // Deprecated it so it can be removed. If you don't want to
+	// remove it, just remove the @Deprecated annotation.
 	public String getString(String section) {
 		FileConfiguration config = BookGUI.getPlugin(BookGUI.class).getConfig();
 		return config.getString(section);
 	}
-	
+
 	public List<String> getStringList(String section) {
 		FileConfiguration config = BookGUI.getPlugin(BookGUI.class).getConfig();
 		return config.getStringList(section);
