@@ -22,13 +22,13 @@ public class MainCommand implements CommandExecutor {
 		if (sender instanceof Player && args.length > 0) {
 			if(ConfigVariables.bookSections.contains(args[0])) {
 				for (String bookName : ConfigVariables.bookSections) {
-                                        if(args[0].equalsIgnoreCase(BookName)) {
-					        String title = "Books." + bookName + ".title";
-					        List<String> pages = Color.translate(getStringList("Books." + bookName + ".pages"));
-					        ItemStack book = BookFactory.create(title, sender.getName(), pages);
-					        me.userod.bookgui.utils.Book.open(book, (Player) sender);
-				        }
-                                }
+					if(args[0].equalsIgnoreCase(bookName)) {
+					    String title = "Books." + bookName + ".title";
+					    List<String> pages = Color.translate(getStringList("Books." + bookName + ".pages"));
+					    ItemStack book = BookFactory.create(title, sender.getName(), pages);
+					    me.userod.bookgui.utils.Book.open(book, (Player) sender);
+					}
+				}
 				return true;
 			}
 		}
